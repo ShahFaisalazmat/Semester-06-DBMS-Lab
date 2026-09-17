@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" 
+        xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" 
+        xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" 
+        rd:ReportUnitType="Mm" rd:DrawGrid="true" rd:GridSpacing="2.5">
+  <EmbeddedImages>
+    <EmbeddedImage Name="Image1">
+      <ImageData>...</ImageData>
+      <MIMEType>image/png</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=.;Initial Catalog=LibraryDB;Integrated Security=True</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>abc-123</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT BookID, Title, Author, Category, Quantity FROM Books</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <PageHeader>
+    <Height>10mm</Height>
+    <ReportItems>
+      <Textbox Name="txtHeader">
+        <CanGrow>true</CanGrow>
+        <Value>LIBRARY BOOKS REPORT</Value>
+        <Style>
+          <FontSize>18pt</FontSize>
+          <FontWeight>Bold</FontWeight>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Top>2mm</Top>
+        <Left>0mm</Left>
+        <Width>210mm</Width>
+        <Height>8mm</Height>
+      </Textbox>
+    </ReportItems>
+  </PageHeader>
+  <Body>
+    <Height>50mm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>DataSet1</DataSetName>
+        <Top>5mm</Top>
+        <Left>5mm</Left>
+        <Width>200mm</Width>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>6mm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="BookIDHeader">
+                      <Value>Book ID</Value>
+                      <Style>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <FontWeight>Bold</FontWeight>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TitleHeader">
+                      <Value>Title</Value>
+                      <Style>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <FontWeight>Bold</FontWeight>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="AuthorHeader">
+                      <Value>Author</Value>
+                      <Style>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <FontWeight>Bold</FontWeight>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CategoryHeader">
+                      <Value>Category</Value>
+                      <Style>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <FontWeight>Bold</FontWeight>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="QuantityHeader">
+                      <Value>Quantity</Value>
+                      <Style>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <FontWeight>Bold</FontWeight>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>6mm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="BookID">
+                      <Value>=Fields!BookID.Value</Value>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Title">
+                      <Value>=Fields!Title.Value</Value>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Author">
+                      <Value>=Fields!Author.Value</Value>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Category">
+                      <Value>=Fields!Category.Value</Value>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Quantity">
+                      <Value>=Fields!Quantity.Value</Value>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+      </Table>
+    </ReportItems>
+  </Body>
+  <PageFooter>
+    <Height>10mm</Height>
+    <ReportItems>
+      <Textbox Name="txtFooter">
+        <CanGrow>true</CanGrow>
+        <Value>Generated on =Globals!ExecutionTime</Value>
+        <Style>
+          <FontSize>8pt</FontSize>
+        </Style>
+        <Top>2mm</Top>
+        <Left>0mm</Left>
+        <Width>210mm</Width>
+        <Height>6mm</Height>
+      </Textbox>
+    </ReportItems>
+  </PageFooter>
+  <Width>210mm</Width>
+</Report>
